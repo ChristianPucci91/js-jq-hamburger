@@ -1,25 +1,24 @@
 // Hamburger menu:
 // mostrare / nascondere il menu principale
+// sia con il click, sia con il cambio viewport
 // (ricordate che per vedere l’hamburger in alto a destra dovete scendere a risoluzioni tipo tablet o mobile).
-
 
 // >>>>>>>>>>>>>>>>>> INIZIO ESERCIZIO <<<<<<<<<<<<<<<<<<<<
 
-// creo una funzione click sul selettore tag "a" del menu burger
-// quando clicco sull'icona si aprirà il menù con selettore .hamburger-menu a cui diamo una funzione show.
+// creo variabili da associare ai selettori del burger menu e della "x" del close menu.
 
-var burgMenu = $('.header-right > a');
-
-burgMenu.click(function() {
-  $('.hamburger-menu').show();
-});
-
-// Una volta che il menù è aperto applico la stessa funzione click sull'icona "X" del tag "a" con selettore .close e darò una funzione hide una volta cliccato
-
+var headMenu = $('.header-right > a');
+var burgMenu = $('.hamburger-menu');
 var xMenu = $('.hamburger-menu a.close');
 
+//creo funzione a cui aggiungo la classe active al click dell'icona burger
+headMenu.click(function() {
+  burgMenu.addClass("active");
+});
+
+// creo un altra funzione a cui tolgo la classe active al menu aperto dal burger menu. e che scomparirà una volta portato il viewport sopra i 1000px.
 xMenu.click(function() {
-  $('.hamburger-menu').hide();
+  burgMenu.removeClass("active");
 });
 
 // >>>>>>>>>>>>>>>>>> FINE ESERCIZIO <<<<<<<<<<<<<<<<<<<<
